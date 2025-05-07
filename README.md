@@ -1,37 +1,35 @@
-# **Time-Series Prediction with SSM and LSTM Models**
+# 🔮 Time Series Forecasting with State Space Model and LSTM
 
-This guide demonstrates how to implement **State-Space Models (SSM)** and **LSTM** for time-series prediction using **PyTorch** on Google Colab.
+## 📌 Objective
+Implement and compare two neural models for time series forecasting:
+- A custom **State Space Model (SSM)** using matrix operations
+- A standard **LSTM** model using PyTorch
 
-## **Setup**
+## 📈 Dataset
+- **Daily Minimum Temperatures in Melbourne (1981–1990)**
+- Source: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Daily+Minimum+Temperatures+in+Melbourne)
 
-1. **Open Google Colab**: [https://colab.research.google.com/](https://colab.research.google.com/)
-2. **Install Required Libraries**: Install necessary libraries such as `numpy`, `pandas`, `torch`, `matplotlib`, etc.
-3. **Import Dependencies**: Import required Python libraries for data processing, machine learning, and visualization.
+## 🛠️ Tools & Libraries
+- Python, PyTorch, NumPy, Pandas
+- Matplotlib for visualization
 
-## **Steps**
+## 🧠 Model Architectures
+### 🔹 State Space Model
+- Learnable parameters: A, B, C, D matrices
+- Simulates a simplified dynamic system
 
-### **1. Load and Preprocess Data**
+### 🔹 LSTM
+- Single-layer LSTM with a Linear decoder
+- Suitable for sequential temporal patterns
 
-* Load a time-series dataset (e.g., daily temperature data).
-* Normalize the data using MinMax scaling.
-* Split the data into training and testing sequences.
+## 🔍 Evaluation Metrics
+- RMSE (Root Mean Square Error)
+- MAE (Mean Absolute Error)
 
-### **2. Define Models**
+## 📊 Results
 
-* **SSM Model**: Implement a State-Space Model using PyTorch’s `nn.Module`.
-* **LSTM Model**: Implement a simple LSTM network for time-series prediction.
+| Model | RMSE | MAE |
+|-------|------|-----|
+| LSTM  | 2.18 | 1.72 |
+| SSM   | 2.25 | 1.76 |
 
-### **3. Train and Evaluate**
-
-* Train the SSM and LSTM models using the prepared data.
-* Evaluate the models using test data and compare their predictions with the actual values.
-
-### **4. Save Models (Optional)**
-
-* Save the trained models for later use.
-
-## **Key Notes**
-
-* **GPU Acceleration**: Enable GPU in Colab for faster training.
-* **Custom Data**: Replace the dataset URL with your own time-series data.
-* **Hyperparameter Tuning**: Adjust model parameters like `seq_length`, `EPOCHS`, etc., to improve model performance.
